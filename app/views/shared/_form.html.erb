@@ -1,0 +1,10 @@
+<form action="<%= action %>" method="POST">
+  <%= auth_token %>
+  Email: <input type="text" name="user[email]">
+  <br><br>
+  Password: <input type="text" name="user[password]">
+  <br><br>
+
+  <input type="submit" value = "<%= call_to_action %>">
+
+</form>

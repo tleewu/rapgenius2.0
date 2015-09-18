@@ -1,0 +1,7 @@
+<form action= "<%= action %>" method = "POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method", value = "<%= request %>">
+  Comment: <textarea name = "note[comment]"></textarea>
+  <br> <br>
+  <input type="submit" value="<%= call_to_action %>">
+</form>

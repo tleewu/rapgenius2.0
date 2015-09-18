@@ -1,0 +1,3 @@
+<h1> Edit <%= @track.name %> </h1>
+
+<%= render "form", action: track_url(@track), request: "PATCH", call_to_action: "Edit track!" %>

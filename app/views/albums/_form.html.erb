@@ -1,0 +1,21 @@
+<form action= "<%= action %>" method = "POST">
+  <%= auth_token %>
+  <input type="hidden" name="_method", value = "<%= request %>">
+  <b> Album Name: </b> <input type="text" name = "album[name]"><br><br>
+  <b> Select band name: </b> <br>
+  <select name="album[band_id]">
+    <option value=""> </option>
+    <% @bands.each do |band| %>
+      <br>
+      <option value="<%= band.id %>"> <%= band.name %> </option>
+    <%end%>
+  </select>
+
+  <br> <br>
+  <b> Select album type: </b> <br>
+  <input name="album[style]" type="radio" value="live"> Live <br>
+  <input name="album[style]" type="radio" value="studio"> Studio <br>
+
+  <br> <br>
+  <input type="submit" value="<%= call_to_action %>">
+</form>

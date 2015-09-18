@@ -1,0 +1,2 @@
+<h1> Comment for <%= Track.find(params[:track_id]).name %> </h1>
+<%= render "form", action: track_notes_url, request: "POST", call_to_action: "Post" %>

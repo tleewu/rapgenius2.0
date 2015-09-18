@@ -1,0 +1,21 @@
+<h1> <%= @track.name %> </h1>
+
+<%= link_to "Edit track", edit_track_url %> <br>
+<%= link_to "Delete track", track_url(@track), method: :delete %><br>
+<%= link_to "Up one level", album_url(@track.album) %>
+<br><br><br>
+<b> Lyrics </b><br><br>
+&#9835<%= ugly_lyrics(@track.lyrics) %>
+<br><br><br>
+<%= link_to "Post comment", new_track_note_url(@track)%><br><br>
+
+
+<% @track.comments.each do |comment| %>
+  <%= comment.comment %>
+  Written by: <%= comment.user.email %>
+
+  <% if current_user.id == comment.user_id %>
+    <%= button_to "Destroy", track_note_url(comment.track_id, comment.id), method: :delete %>
+  <% end %>
+  <br>
+<% end %>
